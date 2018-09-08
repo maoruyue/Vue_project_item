@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>vue-battle</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_828565_fp3nyepdync.css">
+    <!--<link rel="stylesheet" href="./static/iconfont/iconfont.css">-->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/swiper.css">
+
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript" src="./static/js/swiper.js"></script>
+  <!--阻止300ms延迟-->
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+  <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }
+    if(!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+    }
+    ;(function () {
+      let styleNode = document.createElement('style')
+      console.log(document.documentElement.clientWidth)
+      let w = document.documentElement.clientWidth / 10;
+      styleNode.innerHTML = "html{font-size: " + w +"px!important}"
+      document.head.appendChild(styleNode)
+    })();
+
+    var swiper = new Swiper('.swiper-container', {
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  <script type="text/javaScript">  //1px适配
+    !(function(){
+      const width = document.documentElement.clientWidth ;    //head中设置了meta标签后，获取宽度
+      const dpr = window.devicePixelRatio ;    //获取像素比
+      const scale = 1/dpr ;                    //获得系统缩放的比例
+      const style = document.createElement("style") ;    //创建style标签
+      const metaNode = document.querySelector( 'meta[name="viewport"]' ) ;    //使用属性选择器
+      metaNode.setAttribute("content" ,"initial-scale="+scale+",user-scalable=no"); //设置系统缩放
+      style.innerHTML = "html{font-size:"+width/16*dpr+"px !important;}" ;//因为系统缩放了，整个页面宽度其实已经被放大，所以此时需要将被缩放比例乘回来（width的获取若是在系统缩放下面，那么可以不用再乘缩放比例）
+      document.head.appendChild(style) ;
+    })();
+  </script>
+</html>
