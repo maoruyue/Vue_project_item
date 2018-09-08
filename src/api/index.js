@@ -4,4 +4,4 @@
 import ajax from './ajax'
 
 //获取data数据
-export const reqHome = () =>　ajax('/Home')
+export const reqProduct= () =>　ajax('/product')

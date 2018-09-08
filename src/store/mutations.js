@@ -1,9 +1,13 @@
 /*
  mutation模块
  */
-// export {Home} from './mutation-types'
+ export {Product} from './mutation-types'
 export default {
   // [Home](state, Home){
   //   state.Home = Home
   // }
+
+  [Product](state, Product){
+    state.Product = Product
+  }
 }

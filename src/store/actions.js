@@ -1,5 +1,5 @@
-// import {reqHome} from '../api'
-// import {Home} from './mutation-types'
+ import {reqProduct} from '../api'
+ import {Product} from './mutation-types'
 export default {
   //
   // //异步获取首页home数据
@@ -7,4 +7,8 @@ export default {
   //   const result = await reqHome()
   //   commit({Home})
   // }
+  async getProduct({commit,}, ){
+    const result = await reqProduct()
+    commit({Product})
+  }
 }

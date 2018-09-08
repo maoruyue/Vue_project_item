@@ -85,26 +85,66 @@
           <span>查看全部 <i class="iconfont icon-jiantou"></i></span>
         </div>
         <!--新品滑动列表-->
-        <div class="">
-          <ul class="news_list">
-            <li>
-              <img src="../../../static/images/news_list/news_list01.png" alt="">
-            </li>
-            <span class="topic" style="display: none">爆品</span>
-            <p>网易有道翻译王 2.0pro</p>
-            <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
-            <span class="red">￥1688</span>
-          </ul>
-          <ul class="news_list">
-            <li>
-              <img src="../../../static/images/news_list/news_list01.png" alt="">
-            </li>
-            <span class="topic">满额减</span>
-            <p>男士优质小牛皮手工正装鞋</p>
-            <span class="ellipsis">精挑手工慢做，典雅大气</span>
-            <span class="red">￥659</span>
-          </ul>
+
+        <div class="produce">
+          <div class="ProductList" ref="proUl">
+            <ul class="news_list" >
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic">满额减</span>
+              <p>男士优质小牛皮手工正装鞋</p>
+              <span class="ellipsis">精挑手工慢做，典雅大气</span>
+              <span class="red">￥659</span>
+            </ul>
+          </div>
         </div>
+
         <!--人气推荐-->
         <div class="newsProduce renqi">
           <p>人气推荐 · 好物精选</p>
@@ -522,10 +562,14 @@ import BScroll from 'better-scroll'
     data(){
       return {
         navLists:['推荐','居家','鞋包配饰','服装','电器','洗护','饮食', '餐厨', '婴童','文体','特色区']
+
       }
     },
     mounted(){
       this._initScroll()
+      this._initProductScroll()
+//      this.$store.dispatch('getProduct')
+
     },
     methods:{
       _initScroll(){
@@ -546,6 +590,24 @@ import BScroll from 'better-scroll'
         , 0)
         ul.style.width = width + space*size +'px'
         new BScroll('.navList',{
+          click: true,
+          scrollX: true,
+          scrollY: false
+        })
+      },
+      _initProductScroll(){
+        const space = 40   //ul之间的空隙是40
+        const product = this.$refs.proUl   //获取proUl下的所有ul
+        let divWidth = 0    //先令容器中的宽度为0，在遍历添加
+        Array.from(product.children).forEach((item,index)=>{
+
+          divWidth += 280 +space    //使每一次遍历的ul的宽度都添加进容器中
+          console.log(divWidth,item)
+        })
+
+        product.style.width = divWidth +'px'   //最后得到容器的宽度
+        console.log(product, divWidth)
+        new BScroll('.produce',{    //滑动的对象及配置信息
           click: true,
           scrollX: true,
           scrollY: false
@@ -638,17 +700,21 @@ import BScroll from 'better-scroll'
     }
     .baozheng{
      /* padding (10*2/$rem) 0 */
-      margin-top (10*2/$rem)
+      padding-top (10*2/$rem)
       display flex
+      width: 100%
+      height (20*2/$rem)
+      z-index 5
+      background #fff
       >.duigou{
         display flex
         flex 1
         padding-left (5*2/$rem)
         font-size (12*2/$rem)
-
         >.icon-duigou{
           color red
           margin-right (5*2/$rem)
+          background #fff
         }
       }
     }
@@ -704,7 +770,6 @@ import BScroll from 'better-scroll'
         background-repeat no-repeat
         padding (5/$rem)
         margin (5/$rem) (3/$rem)
-        border (1/$rem) solid #999
         font-size (14*2/$rem)
         span{
           display inline-block
@@ -994,19 +1059,10 @@ import BScroll from 'better-scroll'
       }
     }
 
-    /*.dianqi {
-      > p {
-        top-border-1px($color)
-        clear both
-        text-align: center
-        width 100%
-        height 45px
-        line-height 45px
-        background #fff
-      }
-    }*/
 
-    /*.xihu {
+
+    /*
+    .dianqi {
       > p {
         top-border-1px($color)
         clear both
@@ -1017,7 +1073,17 @@ import BScroll from 'better-scroll'
         background #fff
       }
     }
-*/
+    .xihu {
+      > p {
+        top-border-1px($color)
+        clear both
+        text-align: center
+        width 100%
+        height 45px
+        line-height 45px
+        background #fff
+      }
+    }*/
     /*.yinshi {
       > p {
         top-border-1px($color)
@@ -1053,8 +1119,6 @@ import BScroll from 'better-scroll'
         background #fff
       }
     }*/
-
-
 
 
 
