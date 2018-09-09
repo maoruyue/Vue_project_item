@@ -619,7 +619,7 @@ import BScroll from 'better-scroll'
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/stylus/mixins';
-  $color = #666666
+  $body_color = #f4f4f4
   $haowu_bg = #f4f4f4
   $haowu_p_bg = #f1ece2
   $haowu_p = #9f8a60
@@ -627,12 +627,11 @@ import BScroll from 'better-scroll'
     /*overflow auto*/
     width 100%
     heihgt 100%
-    background pink
+    background $body_color
     font-size 16px
     font-family Arial, "Helvetica Neue", Helvetica, sans-serif
   }
   body{
-    height (2000*2 / $rem)
     margin-bottom 50px
     background #f4f4f4
   }
@@ -947,7 +946,7 @@ import BScroll from 'better-scroll'
       position: relative
 
       > .jujia_p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1035,7 +1034,7 @@ import BScroll from 'better-scroll'
     }
     .peijain {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1048,7 +1047,7 @@ import BScroll from 'better-scroll'
 
     .fuzhuang,.dianqi,.xihu, .yinshi, .canchu, .yingtong {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1064,7 +1063,7 @@ import BScroll from 'better-scroll'
     /*
     .dianqi {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1075,7 +1074,7 @@ import BScroll from 'better-scroll'
     }
     .xihu {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1086,7 +1085,7 @@ import BScroll from 'better-scroll'
     }*/
     /*.yinshi {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1098,7 +1097,7 @@ import BScroll from 'better-scroll'
 
     .canchu {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
@@ -1110,7 +1109,7 @@ import BScroll from 'better-scroll'
 
     .yingtong {
       > p {
-        top-border-1px($color)
+        top-border-1px($body_color)
         clear both
         text-align: center
         width 100%
