@@ -1,13 +1,15 @@
 /*
- mutation模块
+包含n个接口请求函数的模块
  */
- export {Product} from './mutation-types'
-export default {
-  // [Home](state, Home){
-  //   state.Home = Home
-  // }
+import {
+  RECEIVE_HEADER,
 
-  [Product](state, Product){
-    state.Product = Product
-  }
+} from './mutation-types'
+
+export default {
+  //头部信息
+  [RECEIVE_HEADER] (state, {headerList}) {
+    state.headerList = headerList
+  },
+
 }

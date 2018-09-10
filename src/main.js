@@ -15,6 +15,8 @@ Vue.component('FooterNav', FooterNav)
 new Vue({
   el: '#app',
   render:h => h(App),
-  router,
-  store
+  router, // 配置路由器 -->所有组件都多了$router/$route
+  store, // 配置vuex的store --> 所有组件对象都多了个$store属性
 })
+
+// Vue.store = store

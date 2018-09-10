@@ -1,23 +1,27 @@
 <template>
   <div>
       <div class="homeContainer clearFix">
-        <div class="head">
+
+       <!-- <div class="head">
           <img class="logo" src="/static/images/logo/logo.png" alt="">
           <div class="search">
             <i class="iconfont icon-search"></i>
             <span>搜索商品，共9771款好物</span>
           </div>
-        </div>
-
+        </div>-->
+        <!--头部-->
+        <HomeHeader />
         <!--导航-->
-        <div class="navList" ref="navList">
+        <NavBar />
+
+        <!--<div class="navList" ref="navList">
           <ul class="content" ref="navUl">
-            <li class="lis active" v-for="(nav, index) in navLists" :key="index" >{{navLists[index]}}</li>
+            <li class="lis active" v-for="(nav, index) in navLists" :key="index">{{navLists[index]}}</li>
           </ul>
-          <!-- you can put some other DOMs here, it won't affect the scrolling -->
-        </div>
+          &lt;!&ndash; you can put some other DOMs here, it won't affect the scrolling &ndash;&gt;
+        </div>-->
         <!--轮播图-->
-        <div class="swiper-container">
+        <div class="swiper-container" v-if="">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="/static/images/banner/banner03.jpg" alt=""></div>
             <div class="swiper-slide"><img src="/static/images/banner/banner04.jpg" alt=""></div>
@@ -85,7 +89,6 @@
           <span>查看全部 <i class="iconfont icon-jiantou"></i></span>
         </div>
         <!--新品滑动列表-->
-
         <div class="produce">
           <div class="ProductList" ref="proUl">
             <ul class="news_list" >
@@ -150,27 +153,57 @@
           <p>人气推荐 · 好物精选</p>
           <span>查看全部 <i class="iconfont icon-jiantou"></i></span>
         </div>
-        <!--新品滑动列表-->
-        <div class="">
-          <ul class="news_list renqi_list">
-            <li>
-              <img src="../../../static/images/news_list/news_list01.png" alt="">
-            </li>
-            <span class="topic" style="display: none">爆品</span>
-            <p>20寸全铝镁合金登机箱</p>
-            <span class="ellipsis">41升超薄坚固 100%铝镁合金</span>
-            <span class="red">￥699</span>
-          </ul>
-          <ul class="news_list renqi_list">
-            <li>
-              <img src="../../../static/images/news_list/news_list01.png" alt="">
-            </li>
-            <span class="topic">爆品</span>
-            <p>AB面独立弹簧床垫 进口乳胶</p>
-            <span class="ellipsis">仅售供应商建议价的1/3</span>
-            <span class="red">￥2599</span>
-          </ul>
+        <!--人气滑动列表-->
+        <div class="renqituijian">
+          <div class="renqiList"  ref="renUl">
+            <ul class="news_list renqi_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>20寸全铝镁合金登机箱</p>
+              <span class="ellipsis">41升超薄坚固 100%铝镁合金</span>
+              <span class="red">￥699</span>
+            </ul>
+            <ul class="news_list renqi_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic">爆品</span>
+              <p>AB面独立弹簧床垫 进口乳胶</p>
+              <span class="ellipsis">仅售供应商建议价的1/3</span>
+              <span class="red">￥2599</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+            <ul class="news_list">
+              <li>
+                <img src="../../../static/images/news_list/news_list01.png" alt="">
+              </li>
+              <span class="topic" style="display: none">爆品</span>
+              <p>网易有道翻译王 2.0pro</p>
+              <span class="ellipsis">随身离线翻译神器 预售送100元礼品卡</span>
+              <span class="red">￥1688</span>
+            </ul>
+          </div>
         </div>
+
         <!--严选限时购-->
         <div class="xianshigou">
           <img src="/static/images/xianshihgou/xianshigou.png" alt="">
@@ -185,17 +218,24 @@
           <img src="../../../static/images/fulishe.jpg" alt="">
         </div>
         <p class="jingxuan">专题精选 <i class="iconfont icon-jiantou2"></i></p>
-        <!--精选滑动列表-->
-        <div class="jingxuan_listContainer">
-          <div class="jingxuan_list">
-            <img src="../../../static/images/jingxuan01.jpg" alt="">
-            <p>夏日厨房清新法则<span class="red">7.9元起</span></p>
-            <span class="xuan_span">去除油腻的厨房清洁妙招</span>
-          </div>
-          <div class="jingxuan_list">
-            <img src="../../../static/images/jingxuan01.jpg" alt="">
-            <p>夏日厨房清新法则<span class="red">7.9元起</span></p>
-            <span class="xuan_span">去除油腻的厨房清洁妙招</span>
+        <!--专题精选滑动列表-->
+        <div class="jianxuanContainer">
+          <div class="jingxuan_listContainer" ref="xuanList">
+            <div class="jingxuan_list">
+              <img src="../../../static/images/jingxuan01.jpg" alt="">
+              <p>夏日厨房清新法则<span class="red">7.9元起</span></p>
+              <span class="xuan_span">去除油腻的厨房清洁妙招</span>
+            </div>
+            <div class="jingxuan_list">
+              <img src="../../../static/images/jingxuan01.jpg" alt="">
+              <p>夏日厨房清新法则<span class="red">7.9元起</span></p>
+              <span class="xuan_span">去除油腻的厨房清洁妙招</span>
+            </div>
+            <div class="jingxuan_list">
+              <img src="../../../static/images/jingxuan01.jpg" alt="">
+              <p>夏日厨房清新法则<span class="red">7.9元起</span></p>
+              <span class="xuan_span">去除油腻的厨房清洁妙招</span>
+            </div>
           </div>
         </div>
 
@@ -552,12 +592,16 @@
 
 
     </div>
-    <FooterNav/>
+    <FooterNav v-show="$route.meta.showFooter"/>
   </div>
 </template>
 
 <script>
 import BScroll from 'better-scroll'
+import {mapState} from 'vuex'
+import HomeHeader from '../../coponents/HomeHeader/HomeHeader.vue'
+import NavBar from '../../coponents/HomeHeader/NavBar.vue'
+import FooterNav from '../../coponents/FooterNav/FooterNav.vue'
   export default {
     data(){
       return {
@@ -565,12 +609,22 @@ import BScroll from 'better-scroll'
 
       }
     },
+
+    components:{
+      HomeHeader,
+      NavBar,
+      FooterNav
+    },
     mounted(){
+
+      //分发给action发ajax获取categorys数据
+
       this._initScroll()
       this._initProductScroll()
-//      this.$store.dispatch('getProduct')
-
+      this._initRenQiScroll()
+      this._initJingXuanScroll()
     },
+
     methods:{
       _initScroll(){
         const space = 80  //两个li之间的距离
@@ -584,7 +638,7 @@ import BScroll from 'better-scroll'
 //          }
           arr.push(lis[i].clientWidth)
         }
-        console.log(arr,1)
+
         const width = arr.reduce((pre, width) =>
           pre + width
         , 0)
@@ -612,8 +666,89 @@ import BScroll from 'better-scroll'
           scrollX: true,
           scrollY: false
         })
+      },
+      _initRenQiScroll(){
+        const space = 40   //ul之间的空隙是40
+        const renqi = this.$refs.renUl   //获取proUl下的所有ul
+        let divWidth = 0    //先令容器中的宽度为0，在遍历添加
+
+        Array.from(renqi.children).forEach((item,index)=>{
+
+          divWidth += 280 +space    //使每一次遍历的ul的宽度都添加进容器中
+          console.log(divWidth,item)
+        })
+
+        renqi.style.width = divWidth +'px'   //最后得到容器的宽度
+        console.log(renqi, divWidth)
+        new BScroll('.renqituijian',{    //滑动的对象及配置信息
+          click: true,
+          scrollX: true
+        })
+      },
+      _initJingXuanScroll(){
+        const space = 10
+        const xuanDiv = this.$refs.xuanList
+        let divW = 0
+        Array.from(xuanDiv.children).forEach((item ,index) => {
+           divW += 570 + space *2
+          console.log(222)
+        })
+        xuanDiv.style.width = divW + 'px'
+        console.log(divW, xuanDiv.clientWidth)
+        new BScroll('.jianxuanContainer',{
+          click: true,
+          scrollX: true
+        })
       }
-    }
+
+    },
+   /* computed:{
+      ...mapState(['categorys']),
+
+      // 轮播需要的二维数组
+      categorysArr () {
+        const {categorys} = this
+        const max = 8  // 小数组中元素的最大长度
+
+        const bigArr = [] // 大数组
+        let smallArr = [] // 小数组
+        // 遍历categorys
+        categorys.forEach(c => {
+
+          // 将小数组保存到大数组中
+          if(smallArr.length===0) {
+            bigArr.push(smallArr)
+          }
+
+          smallArr.push(c)
+
+          // 如果已满, 创建一个新的小数组
+          if(smallArr.length===max) {
+            smallArr = []
+          }
+        })
+
+        return bigArr
+      }
+    },*/
+   /* watch: {
+      categorys () { // 获得了categorys列表数据了
+
+        // 将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它
+        this.$nextTick(() => {
+          // 必须在列表界面显示后才创建(列表数据显示后)
+          new Swiper('.swiper-container', {
+            loop: true,  // 循环轮播
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            },
+          })
+        })
+
+      }
+    },*/
+
   }
 </script>
 
@@ -628,23 +763,23 @@ import BScroll from 'better-scroll'
     width 100%
     heihgt 100%
     background $body_color
-    font-size 16px
+    font-size (16*2/$rem)
     font-family Arial, "Helvetica Neue", Helvetica, sans-serif
   }
   body{
-    margin-bottom 50px
+    margin-bottom (60*2/$rem)
     background #f4f4f4
   }
 
   .homeContainer {
-
+    margin-bottom (20*2/$rem)
     .iconfont{
       font-size (28/$rem)
     }
     .icon-jiantou-you{
       font-size (67/$rem)
     }
-    .head{
+    /*.head{
       position fixed
       z-index: 5
       width: 100%
@@ -656,8 +791,8 @@ import BScroll from 'better-scroll'
         left (5*2/$rem)
         top: (5*2/$rem)
         z-index 10
-        /*width: (138/$rem)
-        height: (40/$rem)*/
+        !*width: (138/$rem)
+        height: (40/$rem)*!
         padding (10*2 /$rem)
         padding-right 0
         float left
@@ -681,7 +816,7 @@ import BScroll from 'better-scroll'
         }
       }
 
-    }
+    }*/
     .swiper-wrapper {
       margin-top (120/$rem)
       width (750/$rem)
@@ -717,7 +852,7 @@ import BScroll from 'better-scroll'
         }
       }
     }
-    .navList {
+   /* .navList {
       position: fixed
       top: (40*2/$rem)
       z-index 5
@@ -738,7 +873,7 @@ import BScroll from 'better-scroll'
       }
 
     }
-
+*/
     .home_content {
       .content_title {
         width 100%
@@ -914,7 +1049,7 @@ import BScroll from 'better-scroll'
     }
     .jingxuan_listContainer {
       /*overflow hidden*/
-      width (1500/$rem)
+      width (3000*2/$rem)
       height: (453/$rem)
       background #795da3
       .jingxuan_list {

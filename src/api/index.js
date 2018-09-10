@@ -3,5 +3,9 @@
  */
 import ajax from './ajax'
 
-//获取data数据
-export const reqProduct= () =>　ajax('/product')
+//首页导航接口请求函数
+export const reqHeadCateList = () => ajax("/headCateList")
+
+
+
+

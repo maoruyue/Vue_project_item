@@ -14,28 +14,47 @@ export default new Router({
   routes: [
     {
       path: '/interlayer',
-      component: InterLayer
+      component: InterLayer,
+      meta:{
+        showFooter:true
+      }
     },
     {
       path: '/',
-      component: Home
+      component: Home,
+      meta:{
+        showFooter:true
+      }
+
     },
     {
       path: '/shopping',
-      component: Shopping
+      component: Shopping,
+      meta:{
+        showFooter:true
+      }
     },
 
     {
       path: '/item',
-      component: Item
+      component: Item,
+      meta:{
+        showFooter:true
+      }
     },
     {
       path: '/person',
-      component: Person
+      component: Person,
+      meta:{
+        showFooter: false
+      }
     },
     {
       path: '/topic',
-      component: Topic
+      component: Topic,
+      meta:{
+        showFooter:true
+      }
     },
 
   ]

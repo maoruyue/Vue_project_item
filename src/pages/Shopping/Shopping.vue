@@ -16,7 +16,7 @@
       </div>
       <div class="login">登录 </div>
     </div>
-    <FooterNav/>
+    <FooterNav v-show="$route.meta.showFooter"/>
   </div>
 </template>
 

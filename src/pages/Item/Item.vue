@@ -13,10 +13,6 @@
         </div>
       </div>
 
-
-
-
-
       <div class="IconList">
         <img src="/static/images/Item/icon.png" alt="">
         <div class="icon_line">
@@ -106,7 +102,7 @@
 
 
     </div>
-    <FooterNav/>
+    <FooterNav v-show="$route.meta.showFooter"/>
   </div>
 </template>
 
