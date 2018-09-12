@@ -14,6 +14,7 @@
 
         </div>
       </div>
+
       <!--轮播-->
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -25,176 +26,49 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
       </div>
+
       <!--轮播下面的列表-->
-      <div class="lunListContainer">
-        <div class="lun_list" ref="lunUl">
-          <ul class="lunList">
-            <img src="/static/images/lun_list/lun_list01.png" alt="">
-            <p>严选推荐</p>
-            <span>342篇文章</span>
-          </ul>
-          <ul class="lunList">
-            <img src="/static/images/lun_list/lun_list02.png" alt="">
-            <p>严选推荐</p>
-            <span>342篇文章</span>
-          </ul>
-          <ul class="lunList">
-            <img src="/static/images/lun_list/lun_list03.png" alt="">
-            <p>严选推荐</p>
-            <span>342篇文章</span>
-          </ul>
-          <ul class="lunList">
-            <img src="/static/images/lun_list/lun_list04.png" alt="">
-            <p>严选推荐</p>
-            <span>342篇文章</span>
-          </ul>
-          <ul class="lunList">
-            <img src="/static/images/lun_list/lun_list03.png" alt="">
-            <p>严选推荐</p>
-            <span>342篇文章</span>
-          </ul>
-          <ul class="lunList">
-            <img src="/static/images/lun_list/lun_list02.png" alt="">
-            <p>严选推荐</p>
-            <span>342篇文章</span>
-          </ul>
-        </div>
-      </div>
+      <Column/>
 
       <!--为你推荐-->
-      <div class="tuijian">
-        <div class="t_p">
-          <p>为你推荐</p>
-        </div>
-        <div class="tuijian_big">
-          <img src="/static/images/tuijian/tuijian01.jpg" alt="">
-          <div class="tui_list">
-            <p>9月服饰鞋包上新<span>7.59元起</span></p>
-            <span class="t_span">秋天从新在开始，更有超值换季折扣等你哦</span>
-          </div>
-        </div>
-        <div class="tuijian_small">
-          <div class="t_m_l">
-            <img src="/static/images/tuijian/tuijain03.jpg" alt="">
-            <span>饮食组： 万万</span>
-            <p class="t_m_l_p">10分钟做出异域大餐</p>
-            <p>所谓美食无国界，虽说中华美食博大精深，但偶尔在家做些异国料理，也是别有一番风味。
-              在海外待过不少时日，遍尝各国美食的我，想给大家推荐几款方便的快手菜，让你10分钟就能品尝到异域大餐。</p>
-          </div>
-          <img src="/static/images/tuijian/tuijian02.jpg" alt="">
-        </div>
-        <div class="tuijian_small">
-          <div class="t_m_l">
-            <img src="/static/images/tuijian/tuijain03.jpg" alt="">
-            <span>丁磊</span>
-            <p class="t_m_l_p">澳洲名庄高分酒，为女生造的好酒</p>
-            <p>澳洲巴罗萨谷干红，限时第2瓶半价</p>
-          </div>
-          <img src="/static/images/tuijian/tuijian02.jpg" alt="">
-        </div>
-
-        <div class="tuijian_big tuijian_big_p">
-          <img src="/static/images/tuijian/tuijian01.jpg" alt="">
-          <div class="tui_list">
-            <p>9月服饰鞋包上新<span>7.59元起</span></p>
-            <span class="t_span">秋天从新在开始，更有超值换季折扣等你哦</span>
-          </div>
-        </div>
-        <div class="tuijian_small">
-          <div class="t_m_l">
-            <img src="/static/images/tuijian/tuijain03.jpg" alt="">
-            <span>饮食组： 万万</span>
-            <p class="t_m_l_p">10分钟做出异域大餐</p>
-            <p>所谓美食无国界，虽说中华美食博大精深，但偶尔在家做些异国料理，也是别有一番风味。
-              在海外待过不少时日，遍尝各国美食的我，想给大家推荐几款方便的快手菜，让你10分钟就能品尝到异域大餐。</p>
-          </div>
-          <img src="/static/images/tuijian/tuijian02.jpg" alt="">
-        </div>
-        <div class="tuijian_small">
-          <div class="t_m_l">
-            <img src="/static/images/tuijian/tuijain03.jpg" alt="">
-            <span>丁磊</span>
-            <p class="t_m_l_p">澳洲名庄高分酒，为女生造的好酒</p>
-            <p>澳洲巴罗萨谷干红，限时第2瓶半价</p>
-          </div>
-          <img src="/static/images/tuijian/tuijian02.jpg" alt="">
-        </div>
-
-        <!--十点一刻-->
-        <div class="shidianyike">
+      <Recommend />
+      <!--严选臻品-->
+      <div class="yanxuanzhenpin" v-if="zhenpin">
+        <div class="zhenpin" v-if="zhenpin.zhenOne">
           <div class="t_p">
-            <p>十点一刻</p>
-          </div> </div>
-
-          <div class="shidianListCon">
-            <div class="shidianList" ref="shidian_List">
-              <div class="shidian">
-                <span>— 今日话题 —</span>
-                <p>你有那些租房经历</p>
-                <span class="shidian_span">聊聊你用过的租房神器</span>
-
-                <div class="shidian_small">
-                  <img src="/static/images/shidianyike/yike02.png" alt="">
-                  <img src="/static/images/shidianyike/yike03.jpg" alt="">
-                  <img src="/static/images/shidianyike/yike04.jpg" alt="">
-                  <i class="iconfont icon-gengduo"></i>
-                  <span>983人参与话题</span>
-                </div>
-              </div>
-              <div class="shidian">
-                <span>— 今日话题 —</span>
-                <p>你有那些租房经历</p>
-                <span class="shidian_span">聊聊你用过的租房神器</span>
-
-                <div class="shidian_small">
-                  <img src="/static/images/shidianyike/yike02.png" alt="">
-                  <img src="/static/images/shidianyike/yike03.jpg" alt="">
-                  <img src="/static/images/shidianyike/yike04.jpg" alt="">
-                  <i class="iconfont icon-gengduo"></i>
-                  <span>983人参与话题</span>
-                </div>
-              </div>
+            <p>{{zhenpin.zhenOne.nickname}}</p>
+          </div>
+          <div class="tuijian_big">
+            <img :src="zhenpin.zhenOne.picUrl" alt="臻品">
+            <div class="tui_list">
+              <p>{{zhenpin.zhenOne.title}}</p>
+              <p class="t_span">{{zhenpin.zhenOne.subtitle}}</p>
             </div>
           </div>
-
-
-      </div>
-
-      <!--严选臻品-->
-      <div class="tuijian zhenpin">
-        <div class="t_p">
-          <p>严选臻品</p>
-        </div>
-        <div class="tuijian_big">
-          <img src="/static/images/zhenpin/zhenpin01.jpg" alt="">
-          <div class="tui_list">
-            <p>严选按摩神器大公开</p>
-            <span class="t_span">揭开每一款的秘技绝学</span>
+          <div class="tuijian_small" v-for="(zps, index) in zhenpin.zhenpins" :key="index">
+            <div class="t_m_l">
+              <p>{{zps.title}}</p>
+              <p>{{zps.subtitle}}</p>
+            </div>
+            <img :src="zps.picUrl" alt="">
           </div>
-        </div>
-        <div class="tuijian_small">
-          <div class="t_m_l">
-            <p>出门旅行，登机箱也要颜值在线</p>
-            <p>德国进口PC材质，好看轻巧又耐摔</p>
-          </div>
-          <img src="/static/images/zhenpin/zhenpin02.jpg" alt="">
-        </div>
-        <div class="tuijian_small">
-          <div class="t_m_l">
-            <p>让洗衣变成一种享受</p>
-            <p>在洗衣这种细微之事上，也要有美好体验</p>
-          </div>
-          <img src="/static/images/zhenpin/zhenpin03.jpg" alt="">
+          <!--<div class="tuijian_small">
+            <div class="t_m_l">
+              <p>让洗衣变成一种享受</p>
+              <p>在洗衣这种细微之事上，也要有美好体验</p>
+            </div>
+            <img src="/static/images/zhenpin/zhenpin03.jpg" alt="">
+          </div>-->
         </div>
       </div>
-      <!--严选LOOK-->
-      <div class="look">
+            <!--严选LOOK-->
+      <div class="look" v-if="yxlook.yxLook">
         <p class="t_p">严选LOOK</p>
-        <img src="/static/images/look/look01.jpg" alt="">
+        <img :src="yxlook.yxLook.picUrl" alt="">
         <div class="look_p">
-          <img src="/static/images/look/look02.png" alt="">
-          <span>s*****u</span>
-          <p>加了冰块一个小金橘，还是觉得比较甜。照评论员说的，下次用苏打水稀释。因为只优惠了10块钱，我有囤了一瓶～</p>
+          <img :src="yxlook.yxLook.avatar" alt="">
+          <span>{{yxlook.yxLook.nickname}}</span>
+          <p>{{yxlook.yxLook.content}}</p>
         </div>
       </div>
 
@@ -202,24 +76,13 @@
       <div class="colorful">
         <div class="t_p">更多精彩</div>
       </div>
-      <div class="wonderful">
-        <div class="colorful_more">
-          <img src="/static/images/colorful/colorful02.jpg" alt="">
-          <p>彩妆、配饰、洗护、衬等男神女神必备好物</p>
+      <div class="wonderful" v-if="findMore">
+        <div class="colorful_more" v-for="(find, index) in findMore" :key="index">
+          <img :src="find.itemPicUrl" alt="">
+          <p>{{find.title}}</p>
         </div>
       </div>
-      <div class="wonderful">
-        <div class="colorful_more">
-          <img src="/static/images/colorful/colorful01.jpg" alt="">
-          <p>彩妆、配饰、洗护、衬等男神女神必备好物</p>
-        </div>
-      </div>
-      <div class="wonderful">
-        <div class="colorful_more">
-          <img src="/static/images/colorful/colorful02.jpg" alt="">
-          <p>彩妆、配饰、洗护、衬等男神女神必备好物</p>
-        </div>
-      </div>
+
 
     </div>
     <FooterNav v-show="$route.meta.showFooter"/>
@@ -228,15 +91,28 @@
 
 <script>
   import Swiper from 'swiper'
+  import {mapState} from 'vuex'
   import BScroll from 'better-scroll'
+  import Column from '../../coponents/Column/Column.vue'  //banner下的推荐
+  import Recommend from './Recommend/Recommend.vue'
   export default {
     mounted(){
-      console.log(this.$route)
-      this._initLunScroll()
+      this.$store.dispatch('getFindMore')
+      this.$store.dispatch('getYxLook')
+      this.$store.dispatch('getZhenpin')
+
+
+//      this._initLunScroll()
       this._initShiDianScroll()
     },
+    computed:{
+
+      ...mapState(['findMore']),
+      ...mapState(['yxlook']),
+      ...mapState(['zhenpin'])
+    },
     methods:{
-      _initLunScroll(){
+     /* _initLunScroll(){
         const space = 20
         const lun_Ul = this.$refs.lunUl
         let lunDivW = 0
@@ -248,15 +124,13 @@
           click: true,
           scrollX: true
         })
-      },
-
-
+      },*/
       _initShiDianScroll(){
         const space = 20
         const timeDiv = this.$refs.shidian_List
         let shiW = 0
         Array.from(timeDiv.children).forEach((item, index) =>{
-          shiW += 573 + space
+          shiW += item.clientWidth+ 100 + space *2
         })
         timeDiv.style.width = shiW + 'px'
         new BScroll('.shidianListCon', {
@@ -264,7 +138,11 @@
           scrollX: true
         })
       }
-    }
+    },
+    components:{
+      Column,
+      Recommend
+    },
 
   }
   var swiper = new Swiper('.swiper-container', {
@@ -290,6 +168,11 @@ html,body{
 .swiper-container {
   width: 100%;
   height: 100%;
+}
+.swiper-wrapper{
+  width (670/$rem)
+  height (345/$rem)
+
 }
 .swiper-slide {
   text-align: center;
@@ -364,7 +247,7 @@ html,body{
     }
   }
 
-  .lun_list{
+ /* .lun_list{
       margin (10*2/$rem) (5*2/$rem)
       width: (1100/$rem)
       height (210/$rem)
@@ -394,170 +277,100 @@ html,body{
 
       }
     }
-
-  .tuijian{
-      margin (15*2/$rem)
-      width: (690/$rem)
-      >.t_p{
-        text-align center
-        margin: auto
-        width: (690/$rem)
-        height: (120/$rem)
-        background saddlebrown
-        line-height (120/$rem)
-        font-size (16*2/$rem)
-      }
-    >.tuijian_big{
-        margin (10*2/$rem) 0
-        width: (690/$rem)
-        height (460/$rem)
-        font-size (16*2/$rem)
-        background red
-
-        img{
-          width: (688/$rem)
-          height: (386/$rem)
-        }
-      >.tui_list{
-          width (688/$rem)
-          text-align center
-          margin:auto
-          >p{
-            text-align: left
-            >span{
-              text-align: left
-              float: right
-            }
-          }
-        >t_span{
-            display block
-            text-align: left
-
-          }
-        }
-      }
-    >.tuijian_small{
-        height (272/$rem)
-        margin (10*2/$rem) 0
-        border (1*2/$rem) solid #d9d9d9
-        >img{
-          width: (280/$rem)
-          height: (272/$rem)
-        }
-      >.t_m_l{
-          float: left
-          width: (400/$rem)
-          margin (20*2/$rem) (5*2/$rem)
-          >img{
-            border-radius 50%
-            width: (46/$rem)
-            height: (46/$rem)
-            vertical-align middle
-          }
-        & span, & p{
-            font-size (14*2/$rem)
-            vertical-align middle
-          }
-        >.t_m_l_p{
-            display inline-block
-            width: (328/$rem)
-            height (38/$rem)
-            white-space nowrap
-            overflow hidden
-            text-overflow ellipsis
-            margin-top (5*2/$rem)
-          }
-        & p:last-child{
-            width: (398/$rem)
-            height: (67/$rem)
-            line-height: (33/$rem)
-            overflow hidden
-            text-overflow ellipsis
-            margin-top (5*2/$rem)
-            color #7f7f7f
-            font-size (12*2/$rem)
-          }
-        }
-      >img{
-          width: (260/$rem)
-          height (272/$rem)
-          float right
-        }
-
-      }
-    }
-  .shidianyike{
-      width: (1200/$rem)
-
-      >.t_p{
-        float: left
-        text-align center
-        margin: auto
-        width: (690/$rem)
-        height: (120/$rem)
-        background saddlebrown
-        line-height (120/$rem)
-        font-size (16*2/$rem)
-      }
-
-    }
-  .shidianListCon{
-    width: (1500/$rem)
-    height (550/$rem)
-    background deepskyblue
-  }
-  .shidian{
-      float left
-      width: (580/$rem)
-      height: (410/$rem)
-      margin-right (10*2/$rem)
-      /*background sandybrown*/
-      text-align: center
-      padding (10*2/$rem)
-      box-sizing border-box
-      background-image url("/static/images/shidianyike/yike01.png")
-      >span:first-child{
-        font-size (12*2/$rem)
-        color #7f7f7
-      }
-    >p{
-        font-size (16*2/$rem)
-        margin-top (20*2/$rem)
-        margin-bottom (10*2/$rem)
-      }
-    >.shidian_span{
-        display block
-        font-size (14*2/$rem)
-        color #7f7f7
-      }
-
-    >.shidian_small{
-        margin-top (20*2/$rem)
-        >img{
-          width:(48/$rem)
-          height: (48/$rem)
-          border-radius 50%
-          margin (5*2/$rem) (-3*2/$rem)
-          vertical-align middle
-        }
-      >.icon-gengduo{
-          font-size (48/$rem)
-          background-color #e9e9e9
-          border-radius 50%
-          vertical-align middle
-          margin-top  (6*2/$rem)
-          margin-left (-5*2/$rem)
-        }
-      >span {
-          font-size (12 * 2 /$rem)
-          color #7f7f7f
-        }
-      }
-    }
-
+*/
   .zhenpin{
-      clear both
+    clear both
+    margin (15*2/$rem)
+    width: (690/$rem)
+    >.t_p{
+      text-align center
+      margin: auto
+      width: (690/$rem)
+      height: (120/$rem)
+      background saddlebrown
+      line-height (120/$rem)
+      font-size (16*2/$rem)
     }
+    >.tuijian_big{
+      margin (10*2/$rem) 0
+      width: (690/$rem)
+      height (460/$rem)
+      font-size (16*2/$rem)
+
+
+      img{
+        width: (688/$rem)
+        height: (386/$rem)
+      }
+      >.tui_list{
+        width (688/$rem)
+        text-align center
+        margin:auto
+        >p{
+          text-align: left
+          >span{
+            text-align: left
+            float: right
+          }
+        }
+        >t_span{
+          display block
+          text-align: left
+
+        }
+      }
+    }
+    >.tuijian_small{
+      height (272/$rem)
+      margin (10*2/$rem) 0
+      border (1*2/$rem) solid #d9d9d9
+      >img{
+        width: (280/$rem)
+        height: (272/$rem)
+      }
+      >.t_m_l{
+        float: left
+        width: (400/$rem)
+        margin (20*2/$rem) (5*2/$rem)
+        >img{
+          border-radius 50%
+          width: (46/$rem)
+          height: (46/$rem)
+          vertical-align middle
+        }
+        & span, & p{
+          font-size (14*2/$rem)
+          vertical-align middle
+        }
+        >.t_m_l_p{
+          display inline-block
+          width: (328/$rem)
+          height (38/$rem)
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+          margin-top (5*2/$rem)
+        }
+        & p:last-child{
+          width: (398/$rem)
+          height: (67/$rem)
+          line-height: (33/$rem)
+          overflow hidden
+          text-overflow ellipsis
+          margin-top (5*2/$rem)
+          color #7f7f7f
+          font-size (12*2/$rem)
+        }
+      }
+      >img{
+        width: (260/$rem)
+        height (272/$rem)
+        float right
+      }
+
+    }
+  }
+
   .look{
     >.t_p{
         width: 100%
@@ -573,6 +386,9 @@ html,body{
     >.look_p{
         margin-left:(10/$rem)
         >img{
+          width (46/$rem)
+          height (46/$rem)
+          border-radius 50%
           display inline-block
           text-align left
           vertical-align middle
@@ -628,11 +444,11 @@ html,body{
     margin 0 auto
     >.colorful_more{
       width: (642/$rem)
-      height: (360/$rem)
+      height: (420/$rem)
       margin: auto
       >img{
-        width: 100%
-        height: 100%
+        width (642/$rem)
+        height (360/$rem)
       }
     >p{
         font-size (14*2/$rem)

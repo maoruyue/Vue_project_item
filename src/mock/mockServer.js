@@ -7,7 +7,6 @@ import shiwuData from './shiwu.json'
 import categoryData from './category.json'
 import  yzm from './yzm.json'
 
-
 Mock.mock('/headCateList', {code:0, data: data.headCateList})
 Mock.mock('/focusList', {code:0, data: data.focusList})
 Mock.mock('/tagList', {code:0, data: data.tagList})
@@ -29,3 +28,4 @@ Mock.mock('/findMore', {code:0, data: shiwuData.findMore})
 
 Mock.mock('/categoryData', {code:0, data: categoryData})
 Mock.mock('/yzm', {code:0, data: yzm})
+Mock.mock('/policyDescList', {code:0, data: data.policyDescList})

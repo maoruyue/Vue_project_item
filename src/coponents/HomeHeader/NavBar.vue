@@ -1,7 +1,7 @@
 <template>
   <div class="navList" ref="navList">
     <ul class="content" ref="navUl">
-      <li class="lis active" v-for="(header,index) in headerList" :key="index">{{header.name}}</li>
+      <li class="lis active" v-for="(header, index) in headerList" :key="index">{{header.name}}</li>
     </ul>
     <!-- you can put some other DOMs here, it won't affect the scrolling -->
   </div>
@@ -9,16 +9,39 @@
 
 <script>
   import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
   export default {
     data() {
       return {}
     },
     mounted(){
-      this.$store.dispatch('getHeaderNav')
+      this.$store.dispatch('getHeaderNav' , ()=>{
+          this.$nextTick(() => {
+            this._initScroll()
+          })
+      })
+
+    },
+    methods:{
+      _initScroll(){
+        const space = 20; //两个li之间的距离
+        const NavUl = this.$refs.navUl;
+        let liWidth = 0;
+        Array.from(NavUl.children).forEach((item, index) =>{
+          liWidth += 280 + space *2
+        })
+
+        NavUl.style.width = liWidth +'px';
+        new BScroll('.navList', {
+          click: true,
+          scrollX: true,
+        })
+      }
     },
     computed:{
-      ...mapState(['headerList']),
+      ...mapState(['headerList'])
     },
+
   }
 </script>
 
